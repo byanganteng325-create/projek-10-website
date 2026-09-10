@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pondok Pesantren Tahfizh Nur Muhammad</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a5c36;
+            --primary-dark: #053b22;
+            --accent-orange: #d97706;
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Top Info Bar */
+        .top-bar {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            border-bottom: 2px solid var(--accent-orange);
+        }
+
+        .top-bar-info {
+            display: flex;
+            gap: 20px;
+        }
+
+        .top-bar-info span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Header Navbar */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo-title h1 {
+            font-size: 20px;
+            color: var(--primary);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .logo-title p {
+            font-size: 12px;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn-cta {
+            background-color: var(--accent-orange);
+            color: var(--white) !important;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(217, 119, 6, 0.2);
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .btn-cta:hover {
+            background-color: #b45309;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Banner */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(5, 59, 34, 0.82), rgba(5, 59, 34, 0.88)), url('gambar_6.png') center/cover no-repeat;
+            color: white;
+            padding: 110px 5% 90px;
+            text-align: center;
+        }
+
+        .hero-box {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            background-color: rgba(217, 119, 6, 0.9);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero h2 {
+            font-size: 38px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            color: #fef08a;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            color: #e2e8f0;
+        }
+
+        .address-tag {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            padding: 12px 20px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            font-size: 15px;
+        }
+
+        /* Container Sections */
+        .section-container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h3 {
+            font-size: 28px;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-header h3::after {
+            content: '';
+            width: 70px;
+            height: 4px;
+            background-color: var(--accent-orange);
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* Grid Layout Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .image-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s;
+        }
+
+        .image-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .badge-tag {
+            background: #dcfce7;
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 12px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .card-body h4 {
+            font-size: 18px;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .card-body p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Program Cards */
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--primary);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .card h4 {
+            font-size: 20px;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 50px 5% 20px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-col h4 {
+            color: var(--accent-orange);
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col p {
+            color: #cbd5e1;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h2 {
+                font-size: 26px;
+            }
+            .top-bar {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-info">
+            <span><i class="fas fa-map-marker-alt"></i> Mampang Prapatan, Jakarta Selatan</span>
+            <span><i class="fas fa-phone-alt"></i> Informasi Pendaftaran Santri</span>
+        </div>
+        <div>
+            <span><i class="fas fa-mosque"></i> Pondok Pesantren Tahfizh</span>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="navbar">
+            <div class="logo-title">
+                <h1>PONDOK PESANTREN TAHFIZH</h1>
+                <p>NUR MUHAMMAD JAKARTA SELATAN</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#program">Program</a></li>
+                <li><a href="#prestasi">Prestasi</a></li>
+                <li><a href="#ekstrakurikuler">Ekstrakurikuler</a></li>
+                <li><a href="#galeri">Galeri</a></li>
+                <li><a href="#kontak" class="btn-cta">Pendaftaran</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="beranda">
+        <div class="hero-box">
+            <span class="hero-badge">Selamat Datang</span>
+            <h2>Pondok Pesantren Tahfizh Nur Muhammad</h2>
+            <p>Mencetak generasi penghafal Al-Qur'an yang mutqin, mandiri, dan berakhlakul karimah.</p>
+            <div class="address-tag">
+                <i class="fas fa-location-dot"></i> Jl. Tegal Parang Selatan V No. 8A, RT 04 / RW 07, Mampang Prapatan, Jakarta Selatan[cite: 3]
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Section -->
+    <div class="section-container" id="program">
+        <div class="section-header">
+            <h3>Program Utama</h3>
+        </div>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-quran"></i></div>
+                <h4>Tahfizh Al-Qur'an 30 Juz</h4>
+                <p>Pembinaan hafalan Al-Qur'an secara intensif dengan target mutqin dan bimbingan tajwid.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-book-open-reader"></i></div>
+                <h4>Kajian Diniyah & Kitab</h4>
+                <p>Pembekalan ilmu syar'i meliputi Fiqih, Aqidah, Hadits, dan Akhlak santri.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-user-shield"></i></div>
+                <h4>Pembentukan Karakter</h4>
+                <p>Penggemblengan kedisiplinan ibadah, kemandirian, serta adab islami sehari-hari.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Prestasi Santri -->
+    <div class="section-container" id="prestasi">
+        <div class="section-header">
+            <h3>Prestasi Santri</h3>
+        </div>
+        <div class="cards-grid">
+            <div class="image-card">
+                <img src="prestasi.png" alt="Juara MHQ Tahfizh" onerror="this.src='https://via.placeholder.com/400x250?text=Foto+Prestasi+MHQ'">
+                <div class="card-body">
+                    <span class="badge-tag"><i class="fas fa-trophy"></i> Juara 1 MHQ</span>
+                    <h4>Lomba Tahfizh Al-Qur'an</h4>
+                    <p>Santri meraih juara pertama Musabaqah Hifzhil Qur'an (MHQ) tingkat wilayah.</p>
+                </div>
+            </div>
+            <div class="image-card">
+                <img src="syafii.png" alt="Wisuda Tahfizh" onerror="this.src='https://via.placeholder.com/400x250?text=Wisuda+Tahfizh+30+Juz'">
+                <div class="card-body">
+                    <span class="badge-tag"><i class="fas fa-award"></i> Wisuda Tahfizh</span>
+                    <h4>Kelulusan 30 Juz Mutqin</h4>
+                    <p>Capaian santri dalam menyelesaikan hafalan Al-Qur'an 30 Juz dengan sekali duduk.</p>
+                </div>
+            </div>
+            <div class="image-card">
+                <img src="akhirmirza.png" alt="Lomba Kaligrafi" onerror="this.src='https://via.placeholder.com/400x250?text=Foto+Lomba+Kaligrafi'">
+                <div class="card-body">
+                    <span class="badge-tag"><i class="fas fa-medal"></i> selesainya akhi mirza</span>
+                    <h4>selesainya akhi mirza</h4>
+                    <p>Penghargaan akhir mirza setelah selesai menghafalnya.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Ekstrakurikuler -->
+    <div class="section-container" id="ekstrakurikuler">
+        <div class="section-header">
+            <h3>Kegiatan Ekstrakurikuler</h3>
+        </div>
+        <div class="cards-grid">
+            <div class="image-card">
+                <img src="rihlah.png" alt="Ekstrakurikuler Memanah" onerror="this.src='https://via.placeholder.com/400x250?text=Foto+Panahan+Santri'">
+                <div class="card-body">
+                    <h4>rihlah</h4>
+                    <p>rihlah untuk refresing santri.</p>
+                </div>
+            </div>
+            <div class="image-card">
+                <img src="sholawat.png" alt="Seni Hadroh dan Marawis" onerror="this.src='https://via.placeholder.com/400x250?text=Foto+Seni+Hadroh'">
+                <div class="card-body">
+                    <h4>Hadroh & Sholawat</h4>
+                    <p>Pengembangan bakat seni musik islami dan lantunan sholawat kebanggaan santri.</p>
+                </div>
+            </div>
+            <div class="image-card">
+                <img src="minisoccer.png" alt="Pencak Silat Pesantren" onerror="this.src='https://via.placeholder.com/400x250?text=Foto+Pencak+Silat'">
+                <div class="card-body">
+                    <h4>minisoccer</h4>
+                    <p>untuk kesehatan dan kesenenggan santri.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Galeri Lingkungan -->
+    <div class="section-container" id="galeri">
+        <div class="section-header">
+            <h3>Fasilitas & Lingkungan</h3>
+        </div>
+        <div class="cards-grid">
+            <div class="image-card">
+                <img src="gambar.png" alt="Gerbang Utama Ponpes Tahfizh Nur Muhammad">
+                <div class="card-body">
+                    <h4>Gedung & Gerbang Utama</h4>
+                    <p>Halaman dan akses masuk utama Pondok Pesantren Tahfizh Nur Muhammad di Mampang Prapatan.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="kontak">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Ponpes Tahfizh Nur Muhammad</h4>
+                <p>Lembaga pendidikan Islam berfokus pada tahfizh Al-Qur'an dan pembentukan karakter santri berakhlak mulia.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Alamat Lengkap</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Tegal Parang Selatan V No. 8A, RT 04 / RW 07, Mampang Prapatan, Jakarta Selatan[cite: 3]</p>
+            </div>
+            <div class="footer-col">
+                <h4>Kontak Informasi</h4>
+                <p><i class="fas fa-envelope"></i> info@ponpesnurmuhammad.sch.id</p>
+                <p><i class="fas fa-phone"></i> Mampang Prapatan, Jakarta Selatan</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Pondok Pesantren Tahfizh Nur Muhammad. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
