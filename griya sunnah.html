@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MA Al Fattah - Portal Resmi Informasi & Layanan</title>
+  <!-- Load Font Awesome Icon CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #05445E;
+      --secondary: #189AB4;
+      --accent: #75E6DA;
+      --light: #F4F9F9;
+      --dark: #1D2D44;
+      --gold: #D4AF37;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* Top Bar Kedinasan */
+    .top-bar {
+      background-color: var(--dark);
+      color: #fff;
+      padding: 8px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+    }
+
+    .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    /* Tombol & Link Instagram */
+    .social-link-ig {
+      color: #fff;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .social-link-ig:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    /* Header / Navbar */
+    header {
+      background-color: var(--primary);
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #fff;
+    }
+
+    .brand-logo {
+      width: 45px;
+      height: 45px;
+      background-color: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: var(--dark);
+      font-size: 1.2rem;
+    }
+
+    .brand-text h1 {
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+    }
+
+    .brand-text p {
+      font-size: 0.75rem;
+      opacity: 0.8;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* Hero Section Kedinasan */
+    .hero {
+      position: relative;
+      height: 480px;
+      background: linear-gradient(rgba(5, 68, 94, 0.75), rgba(5, 68, 94, 0.75)), 
+                  url('al fattah.png') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 0 20px;
+    }
+
+    .hero-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 25px auto;
+      opacity: 0.9;
+    }
+
+    .btn {
+      padding: 12px 28px;
+      background-color: var(--gold);
+      color: var(--dark);
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #b8962d;
+    }
+
+    /* Card Section / Program */
+    .section {
+      padding: 60px 5%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h3 {
+      font-size: 1.8rem;
+      color: var(--primary);
+      text-transform: uppercase;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 8px;
+    }
+
+    .section-title h3::after {
+      content: '';
+      position: absolute;
+      width: 60%;
+      height: 3px;
+      background-color: var(--gold);
+      bottom: 0;
+      left: 20%;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border-top: 4px solid var(--secondary);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .card-body h4 {
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .card-body p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /* Status Bar Kedinasan */
+    .status-bar {
+      background-color: var(--primary);
+      color: #fff;
+      padding: 40px 5%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .status-item h4 {
+      font-size: 2rem;
+      color: var(--accent);
+    }
+
+    .status-item p {
+      font-size: 0.9rem;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--dark);
+      color: #fff;
+      padding: 40px 5% 20px 5%;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .footer-col h5 {
+      color: var(--gold);
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+
+    .footer-col p, .footer-col a {
+      color: #ccc;
+      font-size: 0.85rem;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar Informasi -->
+  <div class="top-bar">
+    <span>Kementerian Agama Republik Indonesia</span>
+    <div class="top-bar-right">
+      <span>Portal Informasi MA Al Fattah</span>
+      <!-- Tombol Instagram (Atas) -->
+      <a href="https://www.instagram.com/instagram" target="_blank" class="social-link-ig">
+        <i class="fa-brands fa-instagram"></i> @ma_alfattah
+      </a>
+    </div>
+  </div>
+
+  <!-- Header / Navigasi Utama -->
+  <header>
+    <div class="brand">
+      <div class="brand-logo">AF</div>
+      <div class="brand-text">
+        <h1>MA AL FATTAH</h1>
+        <p>Unggul, Berakhlak, & Berprestasi</p>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Beranda</a></li>
+        <li><a href="#profil">Profil</a></li>
+        <li><a href="#layanan">Layanan</a></li>
+        <li><a href="#galeri">Galeri</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Madrasah Aliyah Al Fattah</h2>
+      <p>Mewujudkan Generasi Islami yang Menguasai Ilmu Pengetahuan, Teknologi, dan Berakhlakul Karimah.</p>
+      <a href="#layanan" class="btn">PORTAL PPDB ONLINE</a>
+    </div>
+  </section>
+
+  <!-- Statistik Ringkas Kedinasan -->
+  <div class="status-bar">
+    <div class="status-item">
+      <h4>A</h4>
+      <p>Akreditasi Sekolah</p>
+    </div>
+    <div class="status-item">
+      <h4>500+</h4>
+      <p>Siswa Aktif</p>
+    </div>
+    <div class="status-item">
+      <h4>35+</h4>
+      <p>Tenaga Pendidik</p>
+    </div>
+    <div class="status-item">
+      <h4>100%</h4>
+      <p>Kelulusan Alumni</p>
+    </div>
+  </div>
+
+  <!-- Program & Layanan -->
+  <section class="section" id="layanan">
+    <div class="section-title">
+      <h3>Layanan & Kegiatan Utama</h3>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <img src=belajar.png alt="Pembelajaran">
+        <div class="card-body">
+          <h4>Kurikulum Terpadu</h4>
+          <p>Kombinasi kurikulum nasional dan nilai-nilai keagamaan untuk mencetak lulusan yang seimbang secara akademik dan spiritual.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="lab.png" alt="Fasilitas Lab">
+        <div class="card-body">
+          <h4>Fasilitas Pembelajaran Modern</h4>
+          <p>Dilengkapi dengan laboratorium komputer, sains, serta perpustakaan digital untuk mendukung proses belajar mengajar.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="hydrophonic.png" alt="Ekstrakurikuler">
+        <div class="card-body">
+          <h4>Pengembangan Bakat & Ekskul</h4>
+          <p>Wadah pengembangan potensi siswa melalui hydrophonic.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Kedinasan -->
+  <footer id="kontak">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h5>MA AL FATTAH</h5>
+        <p>Lembaga Pendidikan Menengah Keagamaan di bawah naungan Kementerian Agama.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Tautan Cepat</h5>
+        <a href="#">Portal Kemenag</a>
+        <a href="#">Simpatika Kemenag</a>
+        <a href="#">EMIS Pendis</a>
+      </div>
+      <div class="footer-col">
+        <h5>Kontak & Sosial Media</h5>
+        <p>Email: info@malfattah.sch.id</p>
+        <p>Telepon: (021) 1234-5678</p>
+        <!-- Link Instagram di Footer -->
+        <p style="margin-top: 10px;">
+          <a href="https://www.instagram.com/instagram" target="_blank" style="color: var(--accent); font-weight: bold;">
+            <i class="fa-brands fa-instagram" style="font-size: 1.1rem; margin-right: 5px;"></i> Follow @ma_alfattah
+          </a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 MA Al Fattah. Hak Cipta Dilindungi Undang-Undang.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
