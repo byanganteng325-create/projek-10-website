@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pondok Pesantren Anwaarul Habib</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --brand-green: #064e3b;
+      --brand-green-light: #10b981;
+      --brand-gold: #d97706;
+      --bg-cream: #fbfbf9;
+      --surface: #ffffff;
+      --text-dark: #0f172a;
+      --text-gray: #475569;
+      --border-line: #f1f5f9;
+      --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* Floating Navigation Pill Style */
+    header {
+      position: sticky;
+      top: 20px;
+      z-index: 999;
+      padding: 0 5%;
+    }
+
+    nav.nav-pill {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px 28px;
+      border-radius: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--brand-green);
+      color: var(--brand-gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    .brand-title {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--brand-green);
+      letter-spacing: -0.5px;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .nav-menu a:hover {
+      color: var(--brand-green-light);
+    }
+
+    .btn-cta {
+      background: var(--brand-green);
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 700;
+      transition: all 0.3s ease;
+    }
+
+    .btn-cta:hover {
+      background: #043e2f;
+      transform: translateY(-2px);
+    }
+
+    /* Hero Section Dual Grid */
+    .hero-container {
+      max-width: 1200px;
+      margin: 40px auto 0;
+      padding: 40px 5%;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ecfdf5;
+      color: var(--brand-green-light);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .arabic-heading {
+      font-family: 'Amiri', serif;
+      font-size: 2.2rem;
+      color: var(--brand-gold);
+      margin-bottom: 10px;
+    }
+
+    .hero-left h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--brand-green);
+      margin-bottom: 20px;
+    }
+
+    .hero-left p {
+      font-size: 1.05rem;
+      color: var(--text-gray);
+      margin-bottom: 30px;
+    }
+
+    /* Right Card Info Header */
+    .hero-card {
+      background: var(--surface);
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-line);
+      position: relative;
+    }
+
+    .card-header-tag {
+      position: absolute;
+      top: -12px;
+      right: 24px;
+      background: var(--brand-gold);
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .hero-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+      color: var(--text-dark);
+    }
+
+    .info-list {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+
+    .info-list li {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 14px;
+      font-size: 0.92rem;
+      color: var(--text-gray);
+    }
+
+    .info-list i {
+      color: var(--brand-green-light);
+      margin-top: 4px;
+    }
+
+    /* Highlight Stats Section */
+    .stats-bar {
+      background: var(--surface);
+      border-top: 1px solid var(--border-line);
+      border-bottom: 1px solid var(--border-line);
+      padding: 40px 5%;
+      margin-top: 50px;
+    }
+
+    .stats-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--brand-green);
+    }
+
+    .stat-label {
+      font-size: 0.88rem;
+      color: var(--text-gray);
+      font-weight: 500;
+    }
+
+    /* Program Section Clean List */
+    .section-wrapper {
+      max-width: 1100px;
+      margin: 80px auto;
+      padding: 0 5%;
+    }
+
+    .section-header-left {
+      margin-bottom: 40px;
+    }
+
+    .section-header-left h2 {
+      font-size: 2.2rem;
+      color: var(--brand-green);
+      font-weight: 800;
+    }
+
+    .section-header-left p {
+      color: var(--text-gray);
+    }
+
+    .program-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .program-item {
+      background: var(--surface);
+      border-radius: 16px;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 80px 1fr auto;
+      align-items: center;
+      gap: 24px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-line);
+      transition: all 0.3s ease;
+    }
+
+    .program-item:hover {
+      transform: translateX(6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--brand-green-light);
+    }
+
+    .program-icon-box {
+      width: 70px;
+      height: 70px;
+      background: #f0fdf4;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: var(--brand-green);
+    }
+
+    .program-details h4 {
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+      color: var(--text-dark);
+    }
+
+    .program-details p {
+      font-size: 0.9rem;
+      color: var(--text-gray);
+    }
+
+    .btn-detail {
+      padding: 10px 18px;
+      border-radius: 20px;
+      background: #f8fafc;
+      color: var(--text-dark);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border: 1px solid var(--border-line);
+    }
+
+    .btn-detail:hover {
+      background: var(--brand-green);
+      color: #fff;
+    }
+
+    /* Contact Box Card */
+    .contact-box {
+      background: linear-gradient(135deg, var(--brand-green), #043e2f);
+      border-radius: 24px;
+      padding: 50px 40px;
+      color: #fff;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .contact-box h3 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .contact-box p {
+      color: #a7f3d0;
+      font-size: 0.95rem;
+    }
+
+    .quick-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .quick-form input {
+      padding: 14px 18px;
+      border-radius: 10px;
+      border: none;
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    .btn-submit {
+      background: var(--brand-gold);
+      color: #fff;
+      border: none;
+      padding: 14px;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn-submit:hover {
+      background: #b45309;
+    }
+
+    /* Footer Modern */
+    footer {
+      background: #ffffff;
+      border-top: 1px solid var(--border-line);
+      padding: 40px 5% 20px;
+      text-align: center;
+    }
+
+    .footer-text {
+      color: var(--text-gray);
+      font-size: 0.88rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-container { grid-template-columns: 1fr; }
+      .contact-box { grid-template-columns: 1fr; }
+      .program-item { grid-template-columns: 1fr; text-align: center; }
+      .program-icon-box { margin: 0 auto; }
+      .nav-menu { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Nav Pill -->
+  <header>
+    <nav class="nav-pill">
+      <a href="#" class="brand">
+        <div class="brand-icon"><i class="fa-solid fa-moon"></i></div>
+        <span class="brand-title">ANWAARUL HABIB</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#program">Program</a></li>
+        <li><a href="#fasilitas">Keunggulan</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+
+      <a href="#kontak" class="btn-cta">Pendaftaran</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-container" id="tentang">
+    <div class="hero-left">
+      <div class="hero-badge"><i class="fa-solid fa-sparkles"></i> Penerimaan Santri Baru Ajaran 2026/2027</div>
+      <div class="arabic-heading">أَنْوَارُ الْحَبِيْبِ</div>
+      <h1>Membentuk Santri Beradab, Berilmu, & Al-Qur'ani</h1>
+      <p>Pondok Pesantren Anwaarul Habib memadukan kedalaman tradisi kajian kitab salaf dengan hafalan Al-Qur'an serta penanaman akhlakul karimah.</p>
+    </div>
+
+    <!-- Dual Hero Card (Status PPDB & Quick Info) -->
+    <div class="hero-card">
+      <span class="card-header-tag">INFO PPDB</span>
+      <h3>Gelombang Pendaftaran</h3>
+      <ul class="info-list">
+        <li><i class="fa-solid fa-circle-check"></i> <span><strong>Gelombang 1:</strong> 1 Oktober - 31 Desember</span></li>
+        <li><i class="fa-solid fa-circle-check"></i> <span><strong>Gelombang 2:</strong> 1 Januari - 30 April</span></li>
+        <li><i class="fa-solid fa-clock"></i> <span><strong>Kuota Terbatas:</strong> Hanya 100 Santri Putra/Putri</span></li>
+      </ul>
+      <a href="#kontak" class="btn-cta" style="display: block; text-align: center; width: 100%;">Konsultasi Syarat Masuk</a>
+    </div>
+  </section>
+
+  <!-- Statistics Bar -->
+  <section class="stats-bar">
+    <div class="stats-container">
+      <div>
+        <div class="stat-number">30 Juz</div>
+        <div class="stat-label">Target Hafalan Al-Qur'an</div>
+      </div>
+      <div>
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Sanad Keilmuan Terjaga</div>
+      </div>
+      <div>
+        <div class="stat-number">1:15</div>
+        <div class="stat-label">Rasio Pengajar & Santri</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Section (List Card Layout) -->
+  <section class="section-wrapper" id="program">
+    <div class="section-header-left">
+      <h2>Program Kurikulum</h2>
+      <p>Fokus pembinaan santri secara terarah dan komprehensif</p>
+    </div>
+
+    <div class="program-list">
+      <!-- Item 1 -->
+      <div class="program-item">
+        <div class="program-icon-box"><i class="fa-solid fa-book-quran"></i></div>
+        <div class="program-details">
+          <h4>Tahfizh & Tahsin Al-Qur'an</h4>
+          <p>Bimbingan intensif hafalan Al-Qur'an dengan tajwid yang tepat dan penyetoran rutin setiap hari.</p>
+        </div>
+        <a href="#kontak" class="btn-detail">Lihat Detail</a>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="program-item">
+        <div class="program-icon-box"><i class="fa-solid fa-book-open"></i></div>
+        <div class="program-details">
+          <h4>Dirasah Islamiyah & Kitab Turats</h4>
+          <p>Kajian mendalam ilmu Nahwu, Sharaf, Fiqih Syafi'i, Aqidah, dan Hadits melalui kitab salafus shalih.</p>
+        </div>
+        <a href="#kontak" class="btn-detail">Lihat Detail</a>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="program-item">
+        <div class="program-icon-box"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="program-details">
+          <h4>Pendidikan Formal Terpadu</h4>
+          <p>Integrasi kurikulum pendidikan formal nasional untuk membekali santri bersaing di era digital.</p>
+        </div>
+        <a href="#kontak" class="btn-detail">Lihat Detail</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="section-wrapper" id="kontak">
+    <div class="contact-box">
+      <div>
+        <h3>Ada Pertanyaan Seputar Pendaftaran?</h3>
+        <p>Isi form singkat di samping ini atau hubungi panitia melalui pesan WhatsApp untuk informasi lebih lengkap.</p>
+      </div>
+
+      <form class="quick-form" action="https://wa.me/6281234567890" target="_blank">
+        <input type="text" placeholder="Nama Lengkap Calon Santri / Wali" required>
+        <input type="tel" placeholder="Nomor WhatsApp" required>
+        <button type="submit" class="btn-submit"><i class="fa-brands fa-whatsapp"></i> Kirim Pesan WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p class="footer-text">&copy; 2026 Pondok Pesantren Anwaarul Habib. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
