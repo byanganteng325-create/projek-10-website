@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pondok Pesantren Bayt Al-Hanan</title>
+  <style>
+    /* Reset & Dasar Visual */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #0f172a;
+      color: #f8fafc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    /* Card Utama */
+    .ponpes-card {
+      background-color: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      max-width: 420px;
+      width: 100%;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .ponpes-card:hover {
+      transform: translateY(-4px);
+    }
+
+    /* Foto & Header Gambar */
+    .image-container {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .ponpes-card:hover .image-container img {
+      transform: scale(1.05);
+    }
+
+    /* Badge Label */
+    .badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background-color: #10b981;
+      color: #0f172a;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+    }
+
+    /* Konten Informasi */
+    .card-content {
+      padding: 24px;
+    }
+
+    .card-content h1 {
+      font-size: 1.4rem;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      color: #38bdf8;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .description {
+      color: #94a3b8;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    /* Daftar Detail */
+    .info-list {
+      list-style: none;
+      margin-bottom: 24px;
+      border-top: 1px solid #334155;
+      padding-top: 16px;
+    }
+
+    .info-list li {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .info-list li span.label {
+      color: #64748b;
+    }
+
+    /* Tombol Klik */
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background-color: #38bdf8;
+      color: #0f172a;
+    }
+
+    .btn-primary:hover {
+      background-color: #0284c7;
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: #38bdf8;
+      border: 1px solid #38bdf8;
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(56, 189, 248, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ponpes-card">
+    <!-- Foto Header Pesantren -->
+    <div class="image-container">
+      <img src="bayt al hannan.png" alt="Pondok Pesantren Bayt Al-Hanan">
+      <span class="badge">Bebas Biaya</span>
+    </div>
+
+    <!-- Konten Detail -->
+    <div class="card-content">
+      <h1>Bayt Al-Hanan</h1>
+      <p class="subtitle">SPM Wustha | Cileungsi, Bogor</p>
+      
+      <p class="description">
+        Lembaga pendidikan Islam berkonsep gratis berbasis pemberdayaan masyarakat di Cileungsi, Bogor. Mengelola pendidikan tahfizh dan dirasah islamiyah dengan asrama terintegrasi.
+      </p>
+
+      <!-- Ringkasan Informasi -->
+      <ul class="info-list">
+        <li><span class="label">NPSN</span> <span>70033686</span></li>
+        <li><span class="label">Pimpinan</span> <span>KH. Abdillah Obid</span></li>
+        <li><span class="label">Jenjang</span> <span>Setara SMP/MTs</span></li>
+      </ul>
+
+      <!-- Tombol Akses / Klik -->
+      <div class="btn-group">
+        <a href="https://baytalhanan.com" target="_blank" class="btn btn-primary">Kunjungi Situs Resmi</a>
+        <a href="https://maps.google.com/?q=Perumahan+Limus+Pratama+Regency+Cileungsi" target="_blank" class="btn btn-secondary">Buka Lokasi Google Maps</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
