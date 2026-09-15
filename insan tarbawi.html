@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pondok Pesantren Insan Tarbawi - Setu, Bekasi</title>
+  <style>
+    /* Reset & Styling Dasar */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #0f172a;
+      color: #f8fafc;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 10px;
+    }
+
+    /* Container Utama */
+    .container {
+      max-width: 800px;
+      width: 100%;
+      background-color: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Banner Gambar Header */
+    .hero-image {
+      width: 100%;
+      height: 260px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .container:hover .hero-image img {
+      transform: scale(1.03);
+    }
+
+    .badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background-color: #10b981;
+      color: #0f172a;
+      padding: 6px 14px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Konten Halaman */
+    .content {
+      padding: 30px 24px;
+    }
+
+    .header-title {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .header-title h1 {
+      font-size: 1.8rem;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .header-title p {
+      color: #38bdf8;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .description {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    /* Grid Fitur / Keunggulan */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    .feature-card {
+      background-color: #0f172a;
+      border: 1px solid #334155;
+      padding: 16px;
+      border-radius: 12px;
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .feature-card:hover {
+      border-color: #38bdf8;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
+    }
+
+    .feature-card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    .feature-card h3 {
+      font-size: 1rem;
+      color: #f1f5f9;
+      margin-bottom: 6px;
+    }
+
+    .feature-card p {
+      font-size: 0.8rem;
+      color: #64748b;
+    }
+
+    /* Ringkasan Informasi */
+    .info-box {
+      background-color: #0f172a;
+      border-left: 4px solid #38bdf8;
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin-bottom: 30px;
+    }
+
+    .info-box ul {
+      list-style: none;
+    }
+
+    .info-box li {
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      margin-bottom: 8px;
+    }
+
+    .info-box li:last-child {
+      margin-bottom: 0;
+    }
+
+    .info-box strong {
+      color: #38bdf8;
+    }
+
+    /* Grup Tombol Akses */
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    @media(min-width: 600px) {
+      .btn-group {
+        flex-direction: row;
+      }
+    }
+
+    .btn {
+      flex: 1;
+      display: block;
+      padding: 14px 20px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background-color: #38bdf8;
+      color: #0f172a;
+    }
+
+    .btn-primary:hover {
+      background-color: #0284c7;
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
+    }
+
+    .btn-success {
+      background-color: #10b981;
+      color: #0f172a;
+    }
+
+    .btn-success:hover {
+      background-color: #059669;
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+    }
+
+    .btn-outline {
+      border: 1px solid #334155;
+      color: #cbd5e1;
+    }
+
+    .btn-outline:hover {
+      background-color: #334155;
+      color: #ffffff;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #64748b;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header Gambar Utama -->
+    <div class="hero-image">
+      <img src="bg insan.png" alt="Gedung Pesantren Insan Tarbawi">
+      <span class="badge">PPDB DIBUKA</span>
+    </div>
+
+    <!-- Konten Detail -->
+    <div class="content">
+      <div class="header-title">
+        <h1>Pondok Pesantren Insan Tarbawi</h1>
+        <p>Ilmiyah Amaliyah & Amaliyah Ilmiyah Berakhlaqul Karimah</p>
+      </div>
+
+      <p class="description">
+        Mendidik generasi muda dengan integrasi pendidikan formal SMPIT dan pesantren. Berfokus pada Tahfidzul Qur'an, Dirasah Islamiyah, serta pengembangan potensi melalui berbagai kegiatan ekstrakurikuler.
+      </p>
+
+      <!-- Kartu Program Gambar yang Bisa Diklik -->
+      <div class="features-grid">
+        <a href="https://insantarbawi.com/ppbd/" target="_blank" class="feature-card">
+          <img src="ngaji insan.png" alt="Tahfidzul Qur'an">
+          <h3>Tahfidzul Qur'an</h3>
+          <p>Klik untuk informasi program hafalan Al-Qur'an.</p>
+        </a>
+
+        <a href="https://insantarbawi.com/profile/" target="_blank" class="feature-card">
+          <img src="pendidikan insan.png" alt="Pendidikan SMPIT">
+          <h3>Pendidikan Formal</h3>
+          <p>Klik untuk melihat jenjang SMPIT Insan Tarbawi.</p>
+        </a>
+
+        <a href="https://insantarbawi.com/category/kegiatan/" target="_blank" class="feature-card">
+          <img src="askul.png" alt="Ekstrakurikuler">
+          <h3>Ekskul & Olahraga</h3>
+          <p>Futsal, Memanah, Berenang, hingga Boxing.</p>
+        </a>
+      </div>
+
+      <!-- Detail Alamat & Kontak -->
+      <div class="info-box">
+        <ul>
+          <li><strong>Alamat:</strong> Jl. MT. Haryono No. 2, Desa Taman Rahayu, Kec. Setu, Kab. Bekasi, Jawa Barat 17320</li>
+          <li><strong>Program Unggulan:</strong> Tahfidz, Kitab Kuning, Eco Pesantren, Muhadharoh</li>
+          <li><strong>Kontak WA:</strong> 0857-7460-3029</li>
+        </ul>
+      </div>
+
+      <!-- Tombol Link yang Bisa Diklik -->
+      <div class="btn-group">
+        <a href="https://insantarbawi.com" target="_blank" class="btn btn-primary">Website Resmi</a>
+        <a href="https://wa.me/6285774603029" target="_blank" class="btn btn-success">Hubungi WhatsApp</a>
+        <a href="https://maps.google.com/?q=Pondok+Pesantren+Insan+Tarbawi+Setu+Bekasi" target="_blank" class="btn btn-outline">Buka Maps</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2026 Pondok Pesantren Insan Tarbawi - Setu, Bekasi.
+  </footer>
+
+</body>
+</html>
