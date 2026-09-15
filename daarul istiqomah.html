@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pondok Pesantren & Yayasan Daarul Istiqoomah</title>
+  <!-- Google Fonts: Inter & Amiri (Tulisan Arab/Islami) -->
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome untuk Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Reset & Variabel Tema Islami Modern (Hijau & Emas) */
+    :root {
+      --primary: #064e3b;        /* Emerald Green Tua */
+      --primary-light: #047857;  /* Emerald Green Medium */
+      --accent: #d97706;         /* Amber/Gold */
+      --accent-hover: #b45309;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* Top Bar Kontak */
+    .top-bar {
+      background-color: var(--primary);
+      color: #ffffff;
+      padding: 8px 5%;
+      font-size: 0.85rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .top-info span {
+      margin-right: 20px;
+    }
+
+    .top-info i {
+      color: var(--accent);
+      margin-right: 6px;
+    }
+
+    /* Navbar Utama */
+    header {
+      background: #ffffff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 5%;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--primary);
+    }
+
+    .logo-badge {
+      width: 45px;
+      height: 45px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      border: 2px solid var(--accent);
+    }
+
+    .logo-text h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .logo-text p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-light);
+    }
+
+    .btn-ppdb {
+      background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+      color: #fff !important;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: 700 !important;
+      box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .btn-ppdb:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(217, 119, 6, 0.4);
+    }
+
+    /* Hero Banner Section */
+    .hero {
+      position: relative;
+      background: linear-gradient(rgba(6, 78, 59, 0.85), rgba(6, 78, 59, 0.9)), 
+                  url('daarul istiqomah.png') center/cover;
+      color: #ffffff;
+      padding: 100px 5% 120px;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .arabic-text {
+      font-family: 'Amiri', serif;
+      font-size: 2.2rem;
+      color: #fde68a;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #e2e8f0;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-main {
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-accent {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-accent:hover {
+      background: var(--accent-hover);
+    }
+
+    .btn-outline-hero {
+      border: 2px solid #ffffff;
+      color: #ffffff;
+    }
+
+    .btn-outline-hero:hover {
+      background: #ffffff;
+      color: var(--primary);
+    }
+
+    /* Section Wrapper */
+    .section-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 80px 5%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    /* Unit Pendidikan Grid */
+    .unit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .unit-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .unit-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(6, 78, 59, 0.12);
+      border-color: var(--primary-light);
+    }
+
+    .unit-img {
+      height: 180px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .unit-body {
+      padding: 24px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .unit-body h3 {
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .unit-body p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .unit-link {
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .unit-link:hover {
+      color: var(--accent-hover);
+    }
+
+    /* Card Banner PPDB / Pengumuman */
+    .ppdb-banner {
+      background: linear-gradient(135deg, #0f172a, var(--primary));
+      border-radius: 20px;
+      padding: 40px;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .ppdb-text h3 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+      color: #fde68a;
+    }
+
+    .ppdb-text p {
+      color: #cbd5e1;
+      max-width: 600px;
+    }
+
+    /* Section Artikel & Lirik Syairan */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .blog-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .blog-card:hover {
+      border-color: var(--accent);
+    }
+
+    .blog-tag {
+      font-size: 0.75rem;
+      background: rgba(217, 119, 6, 0.1);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    .blog-card h4 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .blog-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: #e2e8f0;
+      padding: 60px 5% 20px;
+    }
+
+    .footer-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      color: #ffffff;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+      padding-bottom: 6px;
+    }
+
+    .footer-col p, .footer-col li {
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col a {
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-col a:hover {
+      color: #ffffff;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+
+    /* Floating WhatsApp Button */
+    .float-wa {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 30px;
+      right: 30px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 12px rgba(0,0,0,0.3);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    .float-wa:hover {
+      transform: scale(1.1);
+    }
+
+    /* Responsif Layar HP */
+    @media (max-width: 768px) {
+      .top-bar { display: none; }
+      .nav-links { display: none; } /* Dapat ditambahkan toggle js jika perlu */
+      .hero h1 { font-size: 2rem; }
+      .arabic-text { font-size: 1.6rem; }
+      .ppdb-banner { text-align: center; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar Kontak -->
+  <div class="top-bar">
+    <div class="top-info">
+      <span><i class="fa-solid fa-envelope"></i> sekretariat@daarulistiqoomah.com</span>
+      <span><i class="fa-solid fa-phone"></i> +62 812-8899-9405</span>
+    </div>
+    <div>
+      <span><i class="fa-solid fa-location-dot"></i> Cileungsi, Kab. Bogor</span>
+    </div>
+  </div>
+
+  <!-- Header Navigasi -->
+  <header>
+    <nav>
+      <a href="https://daarulistiqoomah.com" class="logo-container">
+        <div class="logo-badge"><i class="fa-solid fa-kaaba"></i></div>
+        <div class="logo-text">
+          <h2>DAARUL ISTIQOOMAH</h2>
+          <p>YAYASAN & PONDOK PESANTREN</p>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#profil">Beranda</a></li>
+        <li><a href="#unit">Unit Pendidikan</a></li>
+        <li><a href="#artikel">Kajian & Syairan</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+        <li><a href="https://psb.daarulistiqoomah.com" target="_blank" class="btn-ppdb">PPDB Online</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero" id="profil">
+    <div class="hero-content">
+      <div class="arabic-text">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+      <h1>Pondok Pesantren Daarul Istiqoomah</h1>
+      <p>Mencetak Generasi Berilmu, Berhaluan Ahlus Sunnah Wal Jama'ah, Berakhlak Mulia, dan Berjiwa Khidmah.</p>
+      <div class="hero-buttons">
+        <a href="https://psb.daarulistiqoomah.com" target="_blank" class="btn-main btn-accent"><i class="fa-solid fa-user-plus"></i> Daftar PPDB Online</a>
+        <a href="#unit" class="btn-main btn-outline-hero"><i class="fa-solid fa-circle-info"></i> Jelajahi Program</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Unit Pendidikan -->
+  <section class="section-container" id="unit">
+    <div class="section-title">
+      <h2>Unit & Lembaga Pendidikan</h2>
+      <p>Pilihan jenjang pendidikan terpadu di bawah naungan Yayasan Daarul Istiqoomah</p>
+    </div>
+
+    <div class="unit-grid">
+      <!-- Unit 1: SMP ISLAM -->
+      <div class="unit-card">
+        <img src="smp.png" alt="SMP Islam" class="unit-img">
+        <div class="unit-body">
+          <h3>SMP Islam Daarul Istiqoomah</h3>
+          <p>Pendidikan formal tingkat menengah pertama terpadu dengan kurikulum pesantren dan pembinaan karakter santri.</p>
+          <a href="https://smp.daarulistiqoomah.com" target="_blank" class="unit-link">Kunjungi Situs SMP <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Unit 2: SMA DIC / Madrasah -->
+      <div class="unit-card">
+        <img src="sma.png" alt="SMA DIC" class="unit-img">
+        <div class="unit-body">
+          <h3>SMA DIC (Daarul Istiqoomah)</h3>
+          <p>Jenjang pendidikan tingkat atas untuk menyiapkan lulusan berwawasan sains, agama, dan siap ke perguruan tinggi.</p>
+          <a href="https://daarulistiqoomah.com" target="_blank" class="unit-link">Lihat Selengkapnya <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Unit 3: KBIHU DAARUL ISTIQOOMAH -->
+      <div class="unit-card">
+        <img src="makan.png" alt="KBIHU" class="unit-img">
+        <div class="unit-body">
+          <h3>KBIHU Daarul Istiqoomah</h3>
+          <p>Kelompok Bimbingan Ibadah Haji dan Umroh resmi untuk membantu perjalanan ibadah ke Tanah Suci.</p>
+          <a href="https://kbihu.daarulistiqoomah.com" target="_blank" class="unit-link">Kunjungi KBIHU <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Pengumuman PPDB Online -->
+  <section class="section-container" style="padding-top: 0;">
+    <div class="ppdb-banner">
+      <div class="ppdb-text">
+        <h3>Penerimaan Santri Baru (PPDB) Online</h3>
+        <p>Pendaftaran ajaran baru telah dibuka. Daftarkan putra-putri Anda secara langsung melalui portal resmi PSB kami.</p>
+      </div>
+      <a href="https://psb.daarulistiqoomah.com" target="_blank" class="btn-main btn-accent"><i class="fa-solid fa-paper-plane"></i> Masuk Portal PSB</a>
+    </div>
+  </section>
+
+  <!-- Section Berita & Lirik Syairan -->
+  <section class="section-container" id="artikel" style="background: #ffffff; border-radius: 20px;">
+    <div class="section-title">
+      <h2>Kajian & Informasi Terbaru</h2>
+      <p>Artikel keislaman, pengumuman, dan lirik kitab pesantren</p>
+    </div>
+
+    <div class="blog-grid">
+      <div class="blog-card">
+        <span class="blog-tag">Kitab Kuning</span>
+        <h4>Lirik Syairan Sunda & Arab Kitab Syu'bul Iman</h4>
+        <p>Kumpulan teks lirik nasyid dan syairan Sunda-Arab dalam memperdalam cabang-cabang keimanan santri.</p>
+        <a href="https://daarulistiqoomah.com/lirik-syairan-sunda-dan-arab-kitab-syubul-iman/" target="_blank" class="unit-link">Baca Selengkapnya <i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+
+      <div class="blog-card">
+        <span class="blog-tag">Pengumuman</span>
+        <h4>Jadwal Kegiatan & Halaman Login PSB Santri</h4>
+        <p>Akses informasi jadwal verifikasi berkas dan ruang tes seleksi santri baru.</p>
+        <a href="https://psb.daarulistiqoomah.com/ppdb/" target="_blank" class="unit-link">Buka Halaman Login <i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+
+      <div class="blog-card">
+        <span class="blog-tag">Kegiatan Santri</span>
+        <h4>Peringatan Hari Besar Islam & Khidmah Masyarakat</h4>
+        <p>Dokumentasi serangkaian acara rutin pengajian dan kegiatan sosial santri di Cileungsi.</p>
+        <a href="https://daarulistiqoomah.com" target="_blank" class="unit-link">Lihat Galeri <i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer & Informasi Kontak -->
+  <footer id="kontak">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Yayasan Daarul Istiqoomah</h4>
+        <p>Membina dan mencetak santri berakhlak mulia melalui pendidikan formal dan kepesantrenan yang terintegrasi.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Akses Cepat</h4>
+        <ul>
+          <li><a href="https://psb.daarulistiqoomah.com">PPDB Online</a></li>
+          <li><a href="https://smp.daarulistiqoomah.com">SMP Islam</a></li>
+          <li><a href="https://kbihu.daarulistiqoomah.com">KBIHU Haji & Umroh</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Alamat & Kontak</h4>
+        <p><i class="fa-solid fa-location-dot"></i> Jl. H. Satibi No.25 RT. 01/07 Cileungsi, Kab. Bogor, Jawa Barat</p>
+        <p><i class="fa-solid fa-phone"></i> +62 812-8899-9405</p>
+        <p><i class="fa-solid fa-envelope"></i> sekretariat@daarulistiqoomah.com</p>
+      </div>
+    </div>
+
+    <div class="copyright">
+      &copy; 2026 Yayasan Pondok Pesantren Daarul Istiqoomah. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/6281288999405" class="float-wa" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+</body>
+</html>
