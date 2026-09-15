@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pondok Pesantren Griya Sunnah | Official Website</title>
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary-dark: #0f2d24;    /* Deep Sunnah Green */
+      --primary-green: #165b46;   /* Rich Emerald Green */
+      --accent-gold: #c59b27;      /* Islamic Gold Accent */
+      --accent-hover: #a37f1e;
+      --bg-cream: #faf9f6;        /* Clean Pearl Canvas */
+      --surface-white: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --shadow-premium: 0 20px 30px -10px rgba(15, 45, 36, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-cream);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* Top Bar Kontak */
+    .top-bar {
+      background: var(--primary-dark);
+      color: #cbd5e1;
+      padding: 8px 8%;
+      font-size: 0.85rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .top-bar i { color: var(--accent-gold); margin-right: 6px; }
+
+    /* Floating Pro Header */
+    header {
+      background: var(--surface-white);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 16px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      width: 46px;
+      height: 46px;
+      background: var(--primary-dark);
+      border: 2px solid var(--accent-gold);
+      color: var(--accent-gold);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+    }
+
+    .brand-text h2 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      letter-spacing: -0.3px;
+    }
+
+    .brand-text p {
+      font-size: 0.72rem;
+      color: var(--accent-gold);
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 600;
+      font-size: 0.92rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover { color: var(--primary-green); }
+
+    .btn-ppdb {
+      background: linear-gradient(135deg, var(--accent-gold), var(--accent-hover));
+      color: #ffffff !important;
+      padding: 10px 24px;
+      border-radius: 30px;
+      font-weight: 700 !important;
+      box-shadow: 0 4px 14px rgba(197, 155, 39, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .btn-ppdb:hover { transform: translateY(-2px); }
+
+    /* Hero Banner Class Pro */
+    .hero {
+      background: linear-gradient(rgba(15, 45, 36, 0.92), rgba(15, 45, 36, 0.95)), 
+                  url('bg gr.png') center/cover;
+      color: #ffffff;
+      padding: 100px 5% 120px;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .arabic-text {
+      font-family: 'Amiri', serif;
+      font-size: 2.3rem;
+      color: var(--accent-gold);
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      margin-bottom: 36px;
+    }
+
+    .hero-btns {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .btn-main {
+      padding: 14px 32px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-gold {
+      background: var(--accent-gold);
+      color: #fff;
+    }
+
+    .btn-gold:hover { background: var(--accent-hover); }
+
+    .btn-outline {
+      border: 2px solid #ffffff;
+      color: #ffffff;
+    }
+
+    .btn-outline:hover { background: #ffffff; color: var(--primary-dark); }
+
+    /* Section Component */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 90px 5%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: 2.4rem;
+      color: var(--primary-dark);
+      font-weight: 800;
+    }
+
+    .section-title p { color: var(--text-muted); }
+
+    /* Feature Grid Program */
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .program-card {
+      background: var(--surface-white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-premium);
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+
+    .program-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent-gold);
+    }
+
+    .card-img {
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 28px;
+    }
+
+    .card-body h3 {
+      font-size: 1.3rem;
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+    }
+
+    .card-body p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 20px;
+    }
+
+    /* Portal PPDB Banner Section */
+    .ppdb-box {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary-green));
+      border-radius: 24px;
+      padding: 50px 40px;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .ppdb-info h3 { font-size: 2rem; color: var(--accent-gold); margin-bottom: 10px; }
+    .ppdb-info p { color: #cbd5e1; max-width: 600px; }
+
+    /* Footer */
+    footer {
+      background: var(--primary-dark);
+      color: #94a3b8;
+      padding: 70px 5% 30px;
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-col h4 { color: #ffffff; font-size: 1.15rem; margin-bottom: 20px; border-bottom: 2px solid var(--accent-gold); display: inline-block; padding-bottom: 6px; }
+    .footer-col p { font-size: 0.9rem; margin-bottom: 12px; }
+
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.85rem;
+    }
+
+    /* Floating WhatsApp */
+    .float-wa {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 30px;
+      right: 30px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 32px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .top-bar { display: none; }
+      .nav-links { display: none; }
+      .hero h1 { font-size: 2.1rem; }
+      .ppdb-box { text-align: center; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar Contact -->
+  <div class="top-bar">
+    <div>
+      <span><i class="fa-solid fa-envelope"></i> info@griyasunnah.ponpes.id</span>
+      <span style="margin-left:20px;"><i class="fa-solid fa-phone"></i> +62 812-9900-1122</span>
+    </div>
+    <div>
+      <span><i class="fa-solid fa-book-open"></i> Berlandaskan Al-Qur'an & As-Sunnah</span>
+    </div>
+  </div>
+
+  <!-- Header Navigasi -->
+  <header>
+    <nav>
+      <a href="#" class="brand">
+        <div class="brand-logo"><i class="fa-solid fa-kaaba"></i></div>
+        <div class="brand-text">
+          <h2>GRIYA SUNNAH</h2>
+          <p>PONDOK PESANTREN</p>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#profil">Beranda</a></li>
+        <li><a href="#program">Program Pendidikan</a></li>
+        <li><a href="#fasilitas">Fasilitas</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+        <li><a href="#ppdb" class="btn-ppdb">PPDB Online</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="profil">
+    <div class="hero-content">
+      <div class="arabic-text">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+      <h1>Pondok Pesantren Griya Sunnah</h1>
+      <p>Mencetak Generasi Hafizh Al-Qur'an, Berakhlak Mulia, dan Beraqidah Shahihah Berdasarkan Pemahaman Salafus Shalih.</p>
+      <div class="hero-btns">
+        <a href="#ppdb" class="btn-main btn-gold"><i class="fa-solid fa-user-plus"></i> Pendaftaran PPDB Online</a>
+        <a href="#program" class="btn-main btn-outline"><i class="fa-solid fa-book-quran"></i> Program Pendidikan</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Pendidikan -->
+  <section class="container" id="program">
+    <div class="section-title">
+      <h2>Program Pendidikan Utama</h2>
+      <p>Kurikulum pendidikan terpadu Al-Qur'an, Bahasa Arab, & Dirasah Islamiyah</p>
+    </div>
+
+    <div class="program-grid">
+      <!-- Program 1 -->
+      <div class="program-card">
+        <img src="ngaji gr.png" alt="Tahfizh" class="card-img">
+        <div class="card-body">
+          <h3>Tahfizh 30 Juz & Mutqin</h3>
+          <p>Bimbingan intensif hafalan Al-Qur'an 30 Juz secara mutqin dilengkapi dengan pemahaman Tajwid dan Tahsin.</p>
+        </div>
+      </div>
+
+      <!-- Program 2 -->
+      <div class="program-card">
+        <img src="kitab kuning.png" alt="Bahasa Arab" class="card-img">
+        <div class="card-body">
+          <h3>Bahasa Arab & Kitab Kuning</h3>
+          <p>Penguasaan Nahwu, Sharaf, serta literatur kitab-kitab ulama klasik secara aktif dan sistematis.</p>
+        </div>
+      </div>
+
+      <!-- Program 3 -->
+      <div class="program-card">
+        <img src="pendidikan gr.png" alt="Pendidikan Formal" class="card-img">
+        <div class="card-body">
+          <h3>Pendidikan Formal Terpadu</h3>
+          <p>Kurikulum formal tingkat SMP / SMA Islam Terpadu untuk membekali lulusan berwawasan sains & teknologi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PPDB Online Section -->
+  <section class="container" id="ppdb" style="padding-top: 0;">
+    <div class="ppdb-box">
+      <div class="ppdb-info">
+        <h3>Penerimaan Santri Baru (PPDB) Ajaran Baru</h3>
+        <p>Pendaftaran dapat dilakukan secara online melalui portal pendaftaran atau berkonsultasi langsung dengan panitia PSB.</p>
+      </div>
+      <a href="https://wa.me/6281299001122" target="_blank" class="btn-main btn-gold"><i class="fa-brands fa-whatsapp"></i> Chat Panitia PPDB</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="kontak">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Ponpes Griya Sunnah</h4>
+        <p>Lembaga pendidikan Islam yang konsisten membina santri di atas Al-Qur'an dan As-Sunnah sesuai pemahaman para Sahabat Nabi.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Kontak Sekretariat</h4>
+        <p><i class="fa-solid fa-location-dot"></i> Jl. Pesantren Griya Sunnah, Indonesia</p>
+        <p><i class="fa-solid fa-phone"></i> +62 812-9900-1122</p>
+        <p><i class="fa-solid fa-envelope"></i> info@griyasunnah.ponpes.id</p>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2026 Pondok Pesantren Griya Sunnah. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/6281299001122" class="float-wa" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+</body>
+</html>
