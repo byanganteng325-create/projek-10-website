@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ponpes Nurul Iman - Paket 5 Juta Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #f9f9f9; }
+        header { background: #1b5e20; color: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; }
+        .hero { background: #2e7d32; color: white; text-align: center; padding: 60px 20px; }
+        .hero button { background: #ffb300; border: none; padding: 12px 25px; font-weight: bold; cursor: pointer; border-radius: 5px; }
+        
+        .container { width: 90%; max-width: 1000px; margin: 30px auto; text-align: center; }
+        
+        /* Grid Galeri Interaktif */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px; }
+        .gallery-grid img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; cursor: pointer; transition: 0.3s; }
+        .gallery-grid img:hover { transform: scale(1.03); }
+
+        /* Pop-up Modal (Efek Klik Gambar) */
+        .modal { display: none; position: fixed; z-index: 1000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); justify-content: center; align-items: center; }
+        .modal img { max-width: 80%; max-height: 80%; border-radius: 8px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2>Ponpes Nurul Iman</h2>
+        <span>PPDB Online Aktif</span>
+    </header>
+
+    <div class="hero">
+        <h1>Selamat Datang di Ponpes Nurul Iman</h1>
+        <p>Mencetak Generasi Qur'ani, Berakhlak Mulia, dan Berprestasi</p>
+        <button onclick="alert('Formulir Pendaftaran Online Siap!')">Daftar Santri Baru</button>
+    </div>
+
+    <div class="container">
+        <h2>Galeri Kegiatan Santri</h2>
+        <p>Klik salah satu foto untuk melihat ukuran penuh:</p>
+
+        <div class="gallery-grid">
+            <img src="belajar ni.png" onclick="openModal(this.src)" alt="Kegiatan Belajar">
+            <img src="masjid ni.png" onclick="openModal(this.src)" alt="Gedung Utama">
+            <img src="perdanggan.png" onclick="openModal(this.src)" alt="perdaganggan">
+        </div>
+    </div>
+
+    <!-- Modal Pop-up saat gambar diklik -->
+    <div id="myModal" class="modal" onclick="this.style.display='none'">
+        <img id="modalImg" src="">
+    </div>
+
+    <script>
+        function openModal(src) {
+            document.getElementById('modalImg').src = src;
+            document.getElementById('myModal').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
